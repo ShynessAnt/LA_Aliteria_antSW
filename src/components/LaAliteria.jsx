@@ -47,7 +47,7 @@ const LaAliteria = () => {
       opacity: 0,
       x: "100%",
       transition: {
-        duration: 0.3,
+        duration: 0.2,
         ease: "easeInOut",
       },
     },
@@ -55,7 +55,7 @@ const LaAliteria = () => {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.4,
+        duration: 0.2,
         ease: "easeOut",
       },
     },
@@ -200,7 +200,7 @@ const LaAliteria = () => {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden relative z-50 p-2 text-gray-300 hover:text-amber-400 transition-colors"
+            className="md:hidden relative z-50 p-4 text-gray-300 hover:text-amber-400 transition-colors"
             whileTap={{ scale: 0.95 }}
           >
             <motion.div
@@ -348,19 +348,6 @@ const LaAliteria = () => {
                   </motion.button>
                 </div>
               </div>
-
-              {/* Contact Info in Mobile Menu */}
-              <div className="p-6 bg-gradient-to-r from-amber-500/10 to-orange-500/10 border-t border-amber-500/20">
-                <p className="text-amber-400 font-semibold mb-2">
-                  ¡Llámanos ahora!
-                </p>
-                <p className="text-white text-lg font-bold">
-                  +52 56 15 67 19 81
-                </p>
-                <p className="text-gray-400 text-sm">
-                  Lun-Dom: 12:00 PM - 10:00 PM
-                </p>
-              </div>
             </motion.div>
           </>
         )}
@@ -369,7 +356,10 @@ const LaAliteria = () => {
       {/* Hero Section */}
       <section
         id="inicio"
-        className="pt-24 min-h-screen flex items-center bg-gradient-to-br from-black via-gray-900 to-black"
+        className="pt-24 min-h-screen flex items-center relative bg-cover bg-center"
+        style={{
+          backgroundImage: "url(./src/components/assets/fondo1.jpg)",
+        }}
       >
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
