@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Camera, Heart, Star, Facebook, Instagram } from "lucide-react";
 
-import { hamburguesa1 } from "./assets/imagenes";
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState(null);
