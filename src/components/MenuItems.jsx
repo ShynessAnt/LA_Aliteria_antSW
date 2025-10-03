@@ -18,10 +18,10 @@ import {
 // 🔹 Items de navegación
 const navigationItems = [
   { id: "inicio", label: "Inicio", icon: Home },
-  { id: "galeria", label: "Galería", icon: Camera },
   { id: "menu", label: "Menú", icon: UtensilsCrossed },
   { id: "nosotros", label: "Nosotros", icon: Info },
   { id: "contacto", label: "Contacto", icon: Phone },
+  { id: "galeria", label: "Galería", icon: Camera },
 ];
 
 // 🔹 Animación menú móvil
@@ -166,10 +166,9 @@ const MenuItems = ({ activeSection, setActiveSection }) => {
             >
               {/* Header menú móvil */}
               <div className="p-6 border-b border-amber-500/20 flex items-center space-x-3">
-                <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center">
-                  <ChefHat className="w-4 h-4 text-white" />
-                </div>
-                <h2 className="font-bold text-amber-500">La Aliteria</h2>
+                <h2 className="luxurious-script-regular text-3xl font-bold text-amber-500">
+                  La Aliteria
+                </h2>
               </div>
 
               {/* Items menú móvil */}
@@ -213,9 +212,14 @@ const MenuItems = ({ activeSection, setActiveSection }) => {
                   >
                     <Facebook className="w-4 h-4" />
                   </motion.a>
-                  <motion.button className="w-10 h-10 bg-green-600/20 text-green-400 rounded-full flex items-center justify-center hover:bg-green-600 hover:text-white transition">
+                  <motion.a
+                    href="https://wa.me/525615671981"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-green-600/20 text-green-400 rounded-full flex items-center justify-center hover:bg-green-600 hover:text-white transition"
+                  >
                     <MessageCircle className="w-4 h-4" />
-                  </motion.button>
+                  </motion.a>
                 </div>
               </div>
             </motion.div>

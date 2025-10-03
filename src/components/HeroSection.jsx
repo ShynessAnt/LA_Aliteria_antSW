@@ -9,12 +9,12 @@ const HeroSection = ({ fadeInUp, stagger, scrollTo }) => {
     <section
       id="inicio"
       className="relative pt-24 min-h-screen flex items-center bg-cover bg-center"
-      style={{ backgroundImage: "url(/imagenes/fondo3.jpg)" }}
+      style={{ backgroundImage: "url(/imagenes/img-01fondo.webp)" }}
     >
-      {/* ✅ Overlay oscuro encima de la imagen */}
+      {/*  Overlay oscuro encima de la imagen */}
       <div className="absolute inset-0 bg-black/70"></div>
 
-      {/* ✅ Contenido principal siempre encima del overlay */}
+      {/*  Contenido principal siempre encima del overlay */}
       <div className="relative z-10 container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Texto Hero */}
@@ -45,8 +45,9 @@ const HeroSection = ({ fadeInUp, stagger, scrollTo }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Sabores auténticos que conquistan corazones. Hamburguesas
-                gourmet hechas con amor y los mejores ingredientes.
+                Autenticidad en cada sabor y excelencia en cada receta.
+                Hamburguesas preparadas con pasión y los mejores ingredientes,
+                para que disfrutes momentos memorables en cada bocado.
               </motion.p>
             </div>
 

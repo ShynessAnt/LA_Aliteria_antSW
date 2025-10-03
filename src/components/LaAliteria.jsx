@@ -22,7 +22,6 @@ import { hamburguesa1 } from "./assets/imagenes";
 import MenuItems from "./MenuItems";
 import Footer from "./Footer";
 import HeroSection from "./HeroSection";
-import MenuSection from "./MenuSection";
 import AboutSection from "./AboutSection";
 import ScrollToTop from "./ScrollToTop";
 import ContactSection from "./ContactSection";
@@ -67,101 +66,12 @@ const LaAliteria = () => {
     },
   };
 
-  // Animaciones para el menú móvil
-  const mobileMenuVariants = {
-    closed: {
-      opacity: 0,
-      x: "100%",
-      transition: {
-        duration: 0.2,
-        ease: "easeInOut",
-      },
-    },
-    open: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.2,
-        ease: "easeOut",
-      },
-    },
+  const scrollTo = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
-
-  const menuItemVariants = {
-    closed: { x: 50, opacity: 0 },
-    open: (i) => ({
-      x: 0,
-      opacity: 1,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.4,
-        ease: "easeOut",
-      },
-    }),
-  };
-
-  // Datos del menú
-  const menuItems = [
-    {
-      category: "Hamburguesas",
-      items: [
-        {
-          name: "Hamburguesa Doble V",
-          price: "$105 - $110 ",
-          description:
-            "2 carnes de res al carbón de 150g (receta casera), Chistorra, Tocino, Queso Cheddra, Lechuga, Jitomate, Cebolla, Catsup, Mostaza y Pepinillos",
-        },
-        {
-          name: "Hamburguesa Super M",
-          price: "$105 - $110",
-          description:
-            "2 Carnes de res al carbón de 150g (receta casera), 2 Tocinos, 2 Quesos Cheddar, Lechuga, Jitomate, Catsup, Cebolla, Mostaza y Pepinillos",
-        },
-        {
-          name: "Andyburguer ",
-          price: "$85 - $90",
-          description:
-            "150g de carne de res al carbón (receta casera), Aros De Cebolla Tocino, Queso Cheddar, Lechuga, Jitomate, Cebolla, BBQ Catsup, Mostaza y Pepinillos",
-        },
-        {
-          name: "Gabyburguer",
-          price: "$90 - $95",
-          description:
-            "150g de Boneless fuego, Tocino, Queso Cheddar, Lechuga, Jitomate, Cebolla, Catsup, Mostaza y Pepinillos",
-        },
-      ],
-    },
-    {
-      category: "Bebidas",
-      items: [
-        {
-          name: "Café Americano",
-          price: "$30",
-          description: "",
-        },
-        {
-          name: "Capuchino",
-          price: "$45",
-          description: "Amaretto, Cajeta, Almendra, Rompope",
-        },
-        {
-          name: "Café Descafeinado",
-          price: "$30",
-          description: "",
-        },
-        {
-          name: "Capuchino Tradicional",
-          price: "$40",
-          description: "",
-        },
-        {
-          name: "Té",
-          price: "$20",
-          description: "Variedad de sabores",
-        },
-      ],
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -170,22 +80,16 @@ const LaAliteria = () => {
         setActiveSection={setActiveSection}
       />
 
-      <HeroSection
-        fadeInUp={fadeInUp}
-        stagger={stagger}
-        scrollTo={setActiveSection}
-      />
+      <HeroSection scrollTo={scrollTo} fadeInUp={fadeInUp} stagger={stagger} />
 
       {/* menú */}
-      <MenuApp />
-      {/* menú */}
-      <MenuSection menuItems={menuItems} />
+      <MenuApp id="menu" />
 
       {/* About Section */}
       <AboutSection backgroundImage="/imagenes/fondo1.jpg" />
 
       {/* Contact Section */}
-      <ContactSection />
+      <ContactSection id="contacto" />
 
       {/* Collage Imagen  */}
       <GallerySection id="galeria" className="min-h-screen" />
@@ -198,7 +102,7 @@ const LaAliteria = () => {
 
       {/* 📞 Floating Action Button (FAB) para Mobile */}
       <motion.a
-        href="tel:+521234567890" // 👉 coloca tu número aquí
+        href="tel:+525615671981"
         aria-label="Llamar ahora"
         className="fixed bottom-7 right-7 w-14 h-14 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full shadow-xl flex items-center justify-center z-40 md:hidden
              hover:from-orange-500 hover:to-amber-500 transition-all duration-300"

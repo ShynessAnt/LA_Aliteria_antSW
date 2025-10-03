@@ -14,16 +14,22 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-center space-x-3"
           >
-            <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center shadow-lg shadow-amber-500/25">
-              <ChefHat className="w-6 h-6 text-black" />
+            <div className="w-12 h-12 rounded-full flex items-center justify-center ">
+              <img
+                className="h-14 w-auto object-contain ml-4"
+                src="/public/LogoPrincipal.png"
+                alt="logo secundario la aliteria"
+              />
             </div>
-            <span className="text-3xl font-bold font-serif">La Aliteria</span>
+            <span className="luxurious-script-regular text-3xl font-bold font-serif">
+              La Aliteria
+            </span>
           </motion.div>
 
           {/* Texto descriptivo */}
           <p className="text-gray-400 max-w-md mx-auto">
-            Sabores auténticos que conectan corazones y crean momentos
-            inolvidables en familia.
+            Tradición y pasión en cada platillo, creando experiencias que
+            deleitan los sentidos y fortalecen los lazos familiares.
           </p>
 
           {/* Línea final */}

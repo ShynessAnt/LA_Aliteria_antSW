@@ -49,8 +49,10 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-2">Ubicación</h3>
-                <p className="text-gray-400">Xalapa, Veracruz, México</p>
-                <p className="text-gray-400">En el corazón de la ciudad</p>
+                <p className="text-gray-400">Calle Nte. 19 18</p>
+                <p className="text-gray-400">
+                  Lomas de San Carlos, 55080 Ecatepec de Morelos, Méx.
+                </p>
               </div>
             </div>
 
@@ -132,7 +134,7 @@ const ContactSection = () => {
             className="rounded-2xl overflow-hidden shadow-lg shadow-amber-500/20 border border-gray-700"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.748074893574!2d-96.927909!3d19.541436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85db33f9e0d9cbb3%3A0x3b5a0a7f2f3b6df4!2sXalapa%2C%20Veracruz!5e0!3m2!1ses!2smx!4v1682728298264!5m2!1ses!2smx"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d939.7869456452354!2d-99.05315063046844!3d19.578168398858292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f054ba6e0fad%3A0xc47a9192d96c25f2!2sCalle%20Nte.%2019%2018%2C%20Lomas%20de%20San%20Carlos%2C%2055080%20Ecatepec%20de%20Morelos%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1759512093691!5m2!1ses-419!2smx"
               width="100%"
               height="400"
               allowFullScreen=""

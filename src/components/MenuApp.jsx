@@ -891,14 +891,6 @@ const MenuApp = () => {
                 ))}
                 <span className="ml-2 text-sm text-gray-500">(4.9)</span>
               </div>
-
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-4 py-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-full text-sm hover:from-amber-400 hover:to-amber-500 transition-all duration-300 shadow-lg"
-              >
-                Ordenar
-              </motion.button>
             </div>
           </motion.div>
         ))}
@@ -943,11 +935,14 @@ const MenuApp = () => {
             <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-amber-400 ml-4"></div>
           </div>
 
-          <h1 className="text-5xl lg:text-6xl font-bold text-white mb-4">
+          <h2
+            id="menu"
+            className="text-5xl lg:text-6xl font-bold text-white mb-4"
+          >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500">
               La Aliteria
             </span>
-          </h1>
+          </h2>
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Menú completo con todos nuestros deliciosos platillos
@@ -1019,40 +1014,6 @@ const MenuApp = () => {
             {renderContent()}
           </motion.div>
         </AnimatePresence>
-
-        {/* Contact Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mt-20 text-center"
-        >
-          <div className="bg-gradient-to-r from-amber-500/10 to-amber-600/10 backdrop-blur-sm rounded-2xl p-8 border border-amber-500/20">
-            <h3 className="text-2xl font-bold text-amber-400 mb-4">
-              Información de Contacto
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6 text-gray-300">
-              <div>
-                <p className="text-lg mb-2">
-                  <strong className="text-amber-400">WhatsApp:</strong>{" "}
-                  5615671981
-                </p>
-                <p className="text-lg">
-                  <strong className="text-amber-400">Facebook:</strong> La
-                  Aliteria Laredo
-                </p>
-              </div>
-              <div>
-                <p className="text-lg mb-2">
-                  <strong className="text-amber-400">Cobertura:</strong>
-                </p>
-                <p className="text-gray-400">
-                  Laredo, San Carlos, Jalapa, Laureles y Tule
-                </p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -11,25 +11,20 @@ const MinimalCarousel = () => {
   const images = [
     {
       id: 1,
-      url: "/imagenes/fondo1.jpg",
-      title: "Hamburguesas Gourmet",
-      description: "Hechas con pasión y los mejores ingredientes",
+      url: "/imagenes/img-05comida.webp",
+      title: "Hamburguesas Caseras",
+      description:
+        "Hechas con pasión y los mejores ingredientes de la casa para disfrutar en familia",
     },
     {
       id: 2,
-      url: "/imagenes/fondo2.jpg",
-      title: "Platillos Especiales",
-      description: "Sabores únicos que conquistan paladares",
+      url: "/imagenes/img-01bebida.webp",
+      title: "Bebidas Especiales",
+      description: "Sabores únicos para disfrutar",
     },
     {
       id: 3,
-      url: "/imagenes/fondo3.jpg",
-      title: "Postres Artesanales",
-      description: "El final perfecto para una experiencia inolvidable",
-    },
-    {
-      id: 4,
-      url: "/imagenes/img-02collage.jpg",
+      url: "/imagenes/img-04collaje_6_11zon.jpg",
       title: "Postres Artesanales",
       description: "El final perfecto para una experiencia inolvidable",
     },
@@ -41,7 +36,6 @@ const MinimalCarousel = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
     setTimeout(() => setIsTransitioning(false), 300);
   }, [isTransitioning, images.length]);
-
 
   useEffect(() => {
     if (isAutoPlaying) {
