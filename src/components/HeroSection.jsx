@@ -45,9 +45,11 @@ const HeroSection = ({ fadeInUp, stagger, scrollTo }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Autenticidad en cada sabor y excelencia en cada receta.
-                Hamburguesas preparadas con pasión y los mejores ingredientes,
-                para que disfrutes momentos memorables en cada bocado.
+                <h1>
+                  Autenticidad en cada sabor y excelencia en cada receta.
+                  Hamburguesas preparadas con pasión y los mejores ingredientes,
+                  para que disfrutes momentos memorables en cada bocado.
+                </h1>
               </motion.p>
             </div>
 

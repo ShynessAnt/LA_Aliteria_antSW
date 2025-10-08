@@ -89,7 +89,8 @@ const ContactSection = () => {
               <div className="flex space-x-6">
                 {/* Instagram */}
                 <motion.a
-                  href="#"
+                  href="https://www.instagram.com/laaliterialaredo/"
+                  target="_blank"
                   whileHover={{ scale: 1.15 }}
                   className="w-12 h-12 rounded-full flex items-center justify-center 
                   bg-white/10 border border-white/20 text-pink-400 
@@ -101,7 +102,8 @@ const ContactSection = () => {
 
                 {/* Facebook */}
                 <motion.a
-                  href="#"
+                  href="https://www.facebook.com/aliteria.bermirez"
+                  target="_blank"
                   whileHover={{ scale: 1.15 }}
                   className="w-12 h-12 rounded-full flex items-center justify-center 
                   bg-white/10 border border-white/20 text-blue-400 
@@ -113,7 +115,8 @@ const ContactSection = () => {
 
                 {/* WhatsApp */}
                 <motion.a
-                  href="#"
+                  href="https://wa.me/525615671981"
+                  target="_blank"
                   whileHover={{ scale: 1.15 }}
                   className="w-12 h-12 rounded-full flex items-center justify-center 
                   bg-white/10 border border-white/20 text-green-400 
@@ -135,6 +138,7 @@ const ContactSection = () => {
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d939.7869456452354!2d-99.05315063046844!3d19.578168398858292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f054ba6e0fad%3A0xc47a9192d96c25f2!2sCalle%20Nte.%2019%2018%2C%20Lomas%20de%20San%20Carlos%2C%2055080%20Ecatepec%20de%20Morelos%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1759512093691!5m2!1ses-419!2smx"
+              target="_blank"
               width="100%"
               height="400"
               allowFullScreen=""

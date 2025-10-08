@@ -13,7 +13,8 @@ const Star = ({ className }) => (
 );
 
 const MenuApp = () => {
-  const [activeCategory, setActiveCategory] = useState("paquetes");
+  // CAMBIO CLAVE: Inicialmente a null para mostrar el menú de selección.
+  const [activeCategory, setActiveCategory] = useState(null);
 
   const menuData = {
     paquetes: {
@@ -899,6 +900,7 @@ const MenuApp = () => {
   );
 
   const renderContent = () => {
+    // Si activeCategory es null, esto no se llama.
     const categoryData = menuData[activeCategory];
 
     switch (activeCategory) {
@@ -919,10 +921,20 @@ const MenuApp = () => {
     }
   };
 
+  const currentTitle = activeCategory
+    ? menuData[activeCategory].title
+    : "MENÚ PRINCIPAL";
+  const currentSubtitle = activeCategory
+    ? menuData[activeCategory].subtitle
+    : "SELECCIONA UNA CATEGORÍA PARA VER LOS PLATILLOS";
+
   return (
-    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-16">
+    <section
+      id="menu"
+      className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-16"
+    >
       <div className="container mx-auto px-4 max-w-7xl">
-        {/* Header */}
+        {/* Header (Título principal, adaptado) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -935,84 +947,82 @@ const MenuApp = () => {
             <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-amber-400 ml-4"></div>
           </div>
 
-          <h2
-            id="menu"
-            className="text-5xl lg:text-6xl font-bold text-white mb-4"
-          >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500">
-              La Aliteria
-            </span>
+          <h2 className="text-4xl font-extrabold text-white mb-2">
+            {currentTitle}
           </h2>
-
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Menú completo con todos nuestros deliciosos platillos
+          <p className="text-amber-400 font-semibold text-lg">
+            {currentSubtitle}
           </p>
-
-          <div className="mt-8 text-amber-400">
-            <p className="text-sm">
-              Servicio a domicilio gratis con mínimo de compra $155.00 o $10.00
-              el envío
-            </p>
-            <p className="text-sm">
-              WhatsApp: 5615671981 | Facebook: La Aliteria Laredo
-            </p>
-          </div>
         </motion.div>
 
-        {/* Category Navigation */}
-        <div className="mb-12">
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
+        {/* CONTENIDO PRINCIPAL */}
+        <AnimatePresence mode="wait">
+          {/* VISTA DE SELECCIÓN DE CATEGORÍAS (MENÚ PRINCIPAL) */}
+          {!activeCategory && (
+            <motion.div
+              key="category-menu"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.3 }}
+              className="flex justify-center flex-wrap gap-4 mb-16"
+            >
+              {categories.map((category) => (
+                <motion.button
+                  key={category.id}
+                  // Al hacer clic, se selecciona la categoría y se pasa a la vista de detalle
+                  onClick={() => setActiveCategory(category.id)}
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 0 20px rgba(251, 191, 36, 0.5)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-4 bg-gray-800 rounded-xl text-white font-bold text-center border-2 border-amber-500/50 hover:border-amber-400 transition-all duration-300 w-32 h-32 flex flex-col items-center justify-center shadow-lg"
+                >
+                  <span className="text-4xl mb-2">{category.icon}</span>
+                  <span className="text-sm uppercase tracking-wider">
+                    {category.name}
+                  </span>
+                </motion.button>
+              ))}
+            </motion.div>
+          )}
+
+          {/* VISTA DE DETALLE DE LA CATEGORÍA */}
+          {activeCategory && (
+            <motion.div
+              key="category-detail"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.3 }}
+            >
+              {/* BOTÓN DE REGRESO A MENU */}
               <motion.button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
+                onClick={() => setActiveCategory(null)} // Establece a null para volver al menú
+                className="flex items-center gap-2 mb-10 text-amber-400 hover:text-white transition-colors duration-300 bg-gray-800/50 px-4 py-2 rounded-full border border-amber-500/30 hover:bg-amber-500/10"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                  activeCategory === category.id
-                    ? "bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg"
-                    : "bg-gray-800/80 text-gray-300 hover:bg-gray-700/80 border border-amber-500/20"
-                }`}
               >
-                <span className="flex items-center gap-2">
-                  <span className="text-lg">{category.icon}</span>
-                  {category.name}
-                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                Regresar al Menú Principal
               </motion.button>
-            ))}
-          </div>
-        </div>
 
-        {/* Category Title */}
-        <motion.div
-          key={activeCategory}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500 mb-4">
-            {menuData[activeCategory].title}
-          </h2>
-          {menuData[activeCategory].subtitle && (
-            <p className="text-xl text-amber-300 font-semibold">
-              {menuData[activeCategory].subtitle}
-            </p>
+              {/* Contenido de la categoría */}
+              {renderContent()}
+            </motion.div>
           )}
-          <div className="w-32 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto rounded-full mt-4"></div>
-        </motion.div>
-
-        {/* Content */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeCategory}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.6 }}
-          >
-            {renderContent()}
-          </motion.div>
         </AnimatePresence>
       </div>
     </section>

@@ -199,7 +199,7 @@ const MenuItems = ({ activeSection, setActiveSection }) => {
                 <p className="text-sm text-gray-400 mb-4">Síguenos</p>
                 <div className="flex space-x-3">
                   <motion.a
-                    href="https://www.instagram.com/ant.shynxxss_/"
+                    href="https://www.instagram.com/laaliterialaredo/"
                     target="_blank"
                     className="w-10 h-10 bg-pink-600/20 text-pink-400 rounded-full flex items-center justify-center hover:bg-pink-600 hover:text-white transition"
                   >
