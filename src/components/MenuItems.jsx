@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu,
   X,
-  ChefHat,
   Home,
   Camera,
   Info,

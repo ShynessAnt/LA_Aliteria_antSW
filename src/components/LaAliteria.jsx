@@ -1,24 +1,8 @@
 import React, { useState, useEffect } from "react";
 import GallerySection from "./GallerySection";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Phone,
-  MapPin,
-  Clock,
-  Star,
-  ChefHat,
-  Users,
-  Heart,
-  Instagram,
-  Facebook,
-  MessageCircle,
-  Home,
-  UtensilsCrossed,
-  Info,
-  Camera,
-} from "lucide-react";
+import { Phone } from "lucide-react";
 
-import { hamburguesa1 } from "./assets/imagenes";
 import MenuItems from "./MenuItems";
 import Footer from "./Footer";
 import HeroSection from "./HeroSection";
@@ -48,8 +32,6 @@ const LaAliteria = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Animaciones para las secciones
   const fadeInUp = {
