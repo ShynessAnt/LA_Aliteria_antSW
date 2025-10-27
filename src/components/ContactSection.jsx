@@ -15,29 +15,19 @@ const sucursalesData = [
   {
     id: "sancarlos",
     nombre: "Sucursal San Carlos 📍",
-    direccion: [
-      "Calle Nte. 19 18",
-      "Lomas de San Carlos, 55080 Ecatepec de Morelos, Méx.",
-    ],
+    direccion: ["Norte 19 #7. Fracc. San Carlos"],
     telefono: "+52 56 15 67 19 81",
-    horario: [
-      "Lunes - Viernes: 12:00 PM - 10:00 PM",
-      "Sábado - Domingo: 11:00 AM - 11:00 PM",
-    ],
+    horario: ["Martes - Domingo: A partir de las 6:00 p.m."],
     mapEmbedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1059.4301759634297!2d-99.05250213528818!3d19.578056444254003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f054ba4995f1%3A0xa7ced32df5a94cc3!2sCalle%20Nte.%2019%2011%2C%20Lomas%20de%20San%20Carlos%2C%2055080%20Ecatepec%20de%20Morelos%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1761529973714!5m2!1ses-419!2smx", // ¡REEMPLAZAR CON URL REAL!
   },
   {
     id: "laredo",
     nombre: "Sucursal Laredo 📍",
-    direccion: [
-      "[Dirección de Sucursal Laredo]",
-      "[Colonia, Ciudad, Estado, C.P.]",
-    ], // ¡REEMPLAZAR CON DATOS REALES!
-    telefono: "[Teléfono de Laredo]", // ¡REEMPLAZAR CON DATOS REALES!
+    direccion: ["Rio Bravo #49. Col. Nuevo Laredo"],
+    telefono: "+52 56 15 67 19 81", // ¡REEMPLAZAR CON DATOS REALES!
     horario: [
-      "Lunes - Viernes: 12:00 PM - 10:00 PM",
-      "Sábado - Domingo: 11:00 AM - 11:00 PM",
+      "🧾 Martes - Domingo: A partir de las 6:00 p.m.",
     ],
     mapEmbedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.1899201513384!2d-99.04625820000001!3d19.5763625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f1f13c90f4f5%3A0x8f9b4b64a41389e7!2sLa%20Aliteria%20Laredo!5e0!3m2!1ses-419!2smx!4v1761530053117!5m2!1ses-419!2smx", // ¡REEMPLAZAR CON URL REAL!
@@ -104,7 +94,7 @@ const ContactSection = () => {
   return (
     <section
       id="contacto"
-      className="min-h-screen py-16 bg-gradient-to-br from-gray-900 to-black"
+      className="min-h-screen py-32 bg-gradient-to-br from-gray-900 to-black"
     >
       <div className="container mx-auto px-4">
         {/* Título */}

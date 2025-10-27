@@ -15,6 +15,8 @@ import {
   MessageCircle,
 } from "lucide-react";
 
+import { Logo } from "./assets/imagenes";
+
 // 🔹 Items de navegación
 const navigationItems = [
   { id: "inicio", label: "Inicio", icon: Home },
@@ -107,7 +109,7 @@ const MenuItems = ({ activeSection, setActiveSection }) => {
             {/* 🔹 Logo */}
             <img
               className="h-14 w-auto object-contain ml-4"
-              src="/public/LogoPrincipal.png"
+              src={Logo}
               alt="logo principal la aliteria"
             />
             {/* 🔹 Menú escritorio */}

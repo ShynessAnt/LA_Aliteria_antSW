@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Logo } from "./assets/imagenes";
 
 // Iconos (puedes reemplazar con los de tu librería preferida)
 const Heart = ({ className }) => (
@@ -39,7 +40,7 @@ const AboutSection = ({ backgroundImage }) => {
   return (
     <section
       id="nosotros"
-      className=" section-padding relative "
+      className=" section-padding relative pb-52"
       style={{
         backgroundImage: backgroundImage
           ? `linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(55, 65, 81, 0.8)), url(${backgroundImage})`
@@ -107,8 +108,8 @@ const AboutSection = ({ backgroundImage }) => {
                   <div className="text-center">
                     <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg shadow-amber-500/25">
                       <img
-                        className="h-24 w-auto"
-                        src="/public/LogoPrincipal.png"
+                        className=""
+                        src={Logo}
                         alt="logo secundario la aliteria"
                       />
                     </div>
