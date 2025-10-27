@@ -107,9 +107,15 @@ const MenuItems = ({ activeSection, setActiveSection }) => {
         <nav className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             {/* 🔹 Logo */}
-            <a href="inicio">
+            <a
+              href="inicio" // Lo cambiamos a "#" o lo eliminamos, pero en React es mejor usar un handler
+              onClick={(e) => {
+                e.preventDefault(); // Evita el comportamiento predeterminado del <a>
+                handleClick("inicio");
+              }}
+            >
               <img
-                className="h-14 w-auto object-contain ml-4"
+                className="h-14 w-auto object-contain ml-4 cursor-pointer" // Añade cursor-pointer para mejor UX
                 src={Logo}
                 alt="Ir al inicio | La Aliteria"
               />
