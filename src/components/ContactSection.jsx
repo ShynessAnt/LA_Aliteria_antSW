@@ -233,13 +233,6 @@ const ContactSection = () => {
                 ></iframe>
               )}
             </div>
-
-            <div className="p-4 bg-gray-900/80 text-center">
-              <p className="text-gray-400 text-sm">
-                **Nota:** Reemplaza `YOUR_MAP_EMBED_URL_X` con el código de mapa
-                incrustado real de Google Maps.
-              </p>
-            </div>
           </motion.div>
         </div>
 
