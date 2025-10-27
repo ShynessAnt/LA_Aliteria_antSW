@@ -107,11 +107,13 @@ const MenuItems = ({ activeSection, setActiveSection }) => {
         <nav className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             {/* 🔹 Logo */}
-            <img
-              className="h-14 w-auto object-contain ml-4"
-              src={Logo}
-              alt="logo principal la aliteria"
-            />
+            <a href="inicio">
+              <img
+                className="h-14 w-auto object-contain ml-4"
+                src={Logo}
+                alt="Ir al inicio | La Aliteria"
+              />
+            </a>
             {/* 🔹 Menú escritorio */}
             <div className="hidden md:flex items-center space-x-1">
               {navigationItems.map((item) => (

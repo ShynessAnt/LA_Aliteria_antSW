@@ -1,5 +1,6 @@
 // src/components/Footer.jsx
 import { motion } from "framer-motion";
+import { L_A } from "./assets/imagenes";
 
 export default function Footer() {
   return (
@@ -16,7 +17,7 @@ export default function Footer() {
             <div className="w-12 h-12 rounded-full flex items-center justify-center ">
               <img
                 className="h-14 w-auto object-contain ml-4"
-                src="/public/iconLAweb.ico"
+                src={L_A}
                 alt="logo secundario la aliteria"
               />
             </div>
